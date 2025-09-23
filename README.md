@@ -126,7 +126,6 @@ The script will output the predicted class for the image.
 ---
 
 ## 📂 Project Structure
-
 ```
 HybridVisionClassifier/
 ├── docs/
@@ -146,11 +145,17 @@ HybridVisionClassifier/
     ├── 2_extract_features.py
     ├── 3_train_classifier.py
     └── predict.py
- ---
+ ```
+```
+## 📜 License
 
-``
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
+
+
 ## 📞 Contact
 
-Yahiaoui Raiane
+Feel free to reach out with any questions or for collaboration opportunities.
+
+**Yahiaoui Raiane**
 -   **Email:** `ikba.king2015@gmail.com`
 -   **LinkedIn:** [linkedin.com/in/yahiaoui-raiane-253911262](https://www.linkedin.com/in/yahiaoui-raiane-253911262/)
