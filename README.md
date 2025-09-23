@@ -148,7 +148,7 @@ HybridVisionClassifier/
     ├── 3_train_classifier.py
     └── predict.py
  ```
-```
+
 ## 📜 License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
