@@ -125,6 +125,8 @@ The script will output the predicted class for the image.
 
 ---
 
+```
+
 ## 📂 Project Structure
 ```
 HybridVisionClassifier/
