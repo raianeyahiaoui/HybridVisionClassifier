@@ -126,7 +126,8 @@ The script will output the predicted class for the image.
 ---
 
 ## 📂 Project Structure
-``
+
+```
 HybridVisionClassifier/
 ├── docs/
 │   └── images/
@@ -145,11 +146,11 @@ HybridVisionClassifier/
     ├── 2_extract_features.py
     ├── 3_train_classifier.py
     └── predict.py
+ ---
+
 ``
-
-
 ## 📞 Contact
 
 Yahiaoui Raiane
--   **Email:** ikba.king2015@gmail.com
+-   **Email:** `ikba.king2015@gmail.com`
 -   **LinkedIn:** [linkedin.com/in/yahiaoui-raiane-253911262](https://www.linkedin.com/in/yahiaoui-raiane-253911262/)
