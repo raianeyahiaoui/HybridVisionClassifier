@@ -1,7 +1,4 @@
-
-# HybridVisionClassifier: Iris Recognition with SIFT + ResNet50
-
-![Project Banner](https://i.imgur.com/gK2Jk8v.png)
+![Project Banner](docs/images/banner.png)
 
 [![Python Version](https://img.shields.io/badge/Python-3.8%2B-blue.svg)](https://www.python.org/)
 [![TensorFlow Version](https://img.shields.io/badge/TensorFlow-2.x-orange.svg)](https://www.tensorflow.org/)
@@ -14,6 +11,7 @@ This project implements a sophisticated, hybrid approach to iris recognition by 
 ## 📋 Table of Contents
 - [Core Concept](#-core-concept)
 - [Project Workflow](#-project-workflow)
+- [Results](#-results)
 - [Key Features](#-key-features)
 - [Installation Guide](#-installation-guide)
 - [How to Use](#-how-to-use)
@@ -25,12 +23,17 @@ This project implements a sophisticated, hybrid approach to iris recognition by 
 
 ## 🧠 Core Concept
 
-The strength of this project lies in its **hybrid feature engineering**:
+The strength of this project lies in its **hybrid feature engineering**. The pipeline first uses a classic computer vision algorithm to find points of interest, then uses a deep learning model to describe them.
 
-1.  **SIFT (Scale-Invariant Feature Transform):** A powerful algorithm from classic computer vision used to detect stable, localized keypoints (e.g., unique patterns in the iris texture).
-2.  **ResNet50:** A state-of-the-art deep convolutional neural network, pre-trained on ImageNet, used to extract high-level, semantic features from image patches centered around the SIFT keypoints.
+**1. SIFT (Scale-Invariant Feature Transform):**
+First, we use SIFT to detect stable, localized keypoints in the iris texture. This step identifies the most information-rich parts of the image, as visualized below. This technique is robust to changes in scale and rotation.
 
-By combining SIFT's precise localization with ResNet50's rich descriptive power, we create a feature vector that is both robust and highly discriminative.
+![SIFT Keypoint Visualization](docs/images/sift_visualization.png)
+
+**2. ResNet50 Deep Feature Extraction:**
+Next, we extract small image patches around each SIFT keypoint. These patches are then fed into a pre-trained ResNet50 model, which converts each patch into a powerful, high-dimensional deep feature vector.
+
+By combining SIFT's precise localization with ResNet50's rich descriptive power, we create a final feature set that is both robust and highly discriminative.
 
 ---
 
@@ -39,6 +42,14 @@ By combining SIFT's precise localization with ResNet50's rich descriptive power,
 The project is structured as a clear, step-by-step pipeline, making it easy to understand and reproduce.
 
 `Raw Data` -> `1_prepare_data.py` -> `Train/Test Split` -> `2_extract_features.py` -> `features.csv` -> `3_train_classifier.py` -> `Trained Model`
+
+---
+
+## 📊 Results
+
+The final classification model was trained on the hybrid features extracted from the dataset. The training history below shows successful learning and convergence. The accuracy plot demonstrates a steady increase for both training and validation sets, while the loss plot shows a consistent decrease, indicating that the model is learning effectively without significant overfitting.
+
+![Training History](docs/images/training_plots.png)
 
 ---
 
@@ -109,8 +120,7 @@ python 3_train_classifier.py
 To test the trained model on a single, new image, use the `predict.py` script.
 
 ```bash
-python predict.py /path/to/your/new_image.jpg
-```
+python predict.py /path/to/your/new_image.jpg```
 The script will output the predicted class for the image.
 
 ---
@@ -119,6 +129,8 @@ The script will output the predicted class for the image.
 
 ```
 HybridVisionClassifier/
+├── docs/
+│   └── images/
 ├── .gitignore
 ├── README.md
 ├── requirements.txt
