@@ -146,7 +146,10 @@ HybridVisionClassifier/
     ├── 2_extract_features.py
     ├── 3_train_classifier.py
     └── predict.py
-``
+```
+
+---
+
 
 ## 📞 Contact
 
